@@ -1,0 +1,28 @@
+﻿@page "/"
+
+@inherits RetinopathyClassificationPageCode
+
+<div class="mat-layout-grid">
+    <div class="mat-layout-grid-inner">
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-12">
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell mat-layout-grid-cell-span-5"></div>
+                <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+                    <input id="@InputId" class="form-control" type="file" @onchange="@(() => SetPicture())" />
+                </div>
+                <div class="mat-layout-grid-cell mat-layout-grid-cell-span-5"></div>
+            </div>
+        </div>
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-4"></div>
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-4">
+
+            @if (RetinopathyClassificationResponse != null)
+            {
+                <h3>Food Type: @RetinopathyClassificationResponse.ClassName</h3>
+                <h4>Confidence: @RetinopathyClassificationResponse.Confidence</h4>
+            }
+            <img id="@SelectedImageId" src="#" alt="your image" hidden />
+        </div>
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-4"></div>
+    </div>
+</div>
