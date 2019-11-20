@@ -14,7 +14,7 @@ retinopathy_classification_module = Blueprint(
         'retinopathy_classification',
         __name__,
         url_prefix='/',
-        static_folder='../static')
+        static_folder='./static')
 
 retinopathy_classification_model = RetionpathyClassificationModel(
         static_files_path=retinopathy_classification_module.root_path)

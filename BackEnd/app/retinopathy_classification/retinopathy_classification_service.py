@@ -26,6 +26,7 @@ def scaleRadius(img, scale):
 
 
 def process_image(img_path, scale):
+    print("Image path: " + img_path)
     img = cv2.imread(img_path)
 
     img = scaleRadius(img, scale)
