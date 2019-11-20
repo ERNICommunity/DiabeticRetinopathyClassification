@@ -4,7 +4,7 @@ from app.retinopathy_classification.retinopathy_classification_controller import
 
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 # Configurations
 app.config.from_object('config')

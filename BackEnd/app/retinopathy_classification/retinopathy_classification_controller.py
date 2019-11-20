@@ -1,4 +1,5 @@
 from flask import Blueprint, request, jsonify
+from flask_cors import cross_origin
 
 from keras.preprocessing.image import load_img
 
@@ -22,6 +23,7 @@ retinopathy_classification_model.RestNet50.summary()
 
 
 @retinopathy_classification_module.route('/load-model', methods=['GET'])
+@cross_origin()
 def load_model():
     global retinopathy_classification_model
 
@@ -34,6 +36,7 @@ def load_model():
 
 
 @retinopathy_classification_module.route('/predict', methods=['POST'])
+@cross_origin()
 def predict():
     global retinopathy_classification_model
 
@@ -54,6 +57,7 @@ def predict():
 
 
 @retinopathy_classification_module.route('/predict_processed', methods=['POST'])
+@cross_origin()
 def predict_with_processing():
     global retinopathy_classification_model
 
