@@ -3,4 +3,4 @@ COPY . /app
 WORKDIR /app
 RUN pip install -r requirements.txt
 EXPOSE 8081
-CMD python ./run.py
+CMD python ./application.py

@@ -7,7 +7,7 @@ namespace RetinopathyClassification_Blazor.Pages.RetinopathyClassification
     {
         private readonly IJSRuntime _jsRuntime;
 
-        private const string BaseUrl = "http://127.0.0.1:8081";
+        private const string BaseUrl = "http://localhost:8081";
         private readonly string ClassificationUrl = $"{BaseUrl}/predict_processed";
 
         private const string JsLibraryName = "methods";

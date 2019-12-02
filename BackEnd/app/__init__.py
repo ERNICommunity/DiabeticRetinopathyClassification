@@ -3,11 +3,11 @@ from flask_cors import CORS
 from app.retinopathy_classification.retinopathy_classification_controller import retinopathy_classification_module
 
 
-app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "*"}})
+application = Flask(__name__)
+CORS(application, resources={r"/*": {"origins": "*"}})
 
 # Configurations
-app.config.from_object('config')
+application.config.from_object('config')
 
 # Register blueprint(s)
-app.register_blueprint(retinopathy_classification_module)
+application.register_blueprint(retinopathy_classification_module)
